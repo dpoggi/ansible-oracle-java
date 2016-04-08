@@ -74,12 +74,12 @@
   set_fact:
     jce_zip_file: jce_policy-8.zip
     jce_zip_folder: UnlimitedJCEPolicyJDK8
-  when: java_version == 8 and java_install_jce
+  when: java_version == 8
 
 - name: set internal vars for 1.8.x JCE
   set_fact:
     jce_zip_url:    http://download.oracle.com/otn-pub/java/jce/8/{{ jce_zip_file }}
-  when: java_version == 8 and java_install_jce
+  when: java_version == 8
 
 
 
@@ -102,9 +102,9 @@
   set_fact:
     jce_zip_file: UnlimitedJCEPolicyJDK7.zip
     jce_zip_folder: UnlimitedJCEPolicy
-  when: java_version == 7 and java_install_jce
+  when: java_version == 7
 
 - name: set internal vars for 1.7.x JCE
   set_fact:
     jce_zip_url:    http://download.oracle.com/otn-pub/java/jce/7/{{ jce_zip_file }}
-  when: java_version == 7 and java_install_jce
+  when: java_version == 7
